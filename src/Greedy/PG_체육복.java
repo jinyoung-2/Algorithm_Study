@@ -1,12 +1,7 @@
 package Greedy;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
 public class PG_체육복 {
-    public static void main(String[] args) {
+    public static int main(String[] args) {
         /**
          * n: 전체학생수
          * 배열 lost: 체육복 도난당한 학생들 번호 담긴 배열
@@ -17,28 +12,36 @@ public class PG_체육복 {
          * return값: 체육수업을 들을 수 있는 학생의 최댓값
          * */
 
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int n = 5;
         int[] lost = {2,4};
         int[] reserve = {1,3,5};
         int solveNum = 0;
 
-        // 배열 lost와 reserve를 List로 변경
-        Arrays.asList(lost);
-        Arrays.asList(reserve);
+        int lostIdx = 0;
+        int reserveIdx = 0;
+        int cnt = 0;
 
-        // Iterator 생성
-        Iterable<Integer> iterable;
-
-        while(iterable.iterator().hasNext()){
-            if((iterable.iterator().next() ==reserve.)|| (iterable.iterator().next() = reserve. +1 )||(iterable.iterator().next() = reserve. -1 )){
-                //reserve index 제거
-
-                solveNum++;
+        // 예외상황 고려해보기!
+        while(lostIdx < lost.length && reserveIdx < reserve.length){
+            if(lost[lostIdx] > reserve[reserveIdx] + 1){
+                reserveIdx++;
             }
-
+            else if(lost[lostIdx] < reserve[reserveIdx] - 1){
+                lostIdx++;
+            }
+            else{
+                if(lost[lostIdx] == reserve[reserveIdx]){
+                    cnt++;
+                    lostIdx++;
+                    reserveIdx++;
+                }
+                else if(lost[lostIdx] == reserve[reserveIdx] + 1 || lost[lostIdx] == reserve[reserveIdx] -1){
+                    cnt++;
+                    lostIdx++;
+                    reserveIdx++;
+                }
+            }
         }
-        int answer = n - (lost.length-solveNum);
-        System.out.println(answer);    //5출력
+        return n-lost.length+cnt;
     }
 }
