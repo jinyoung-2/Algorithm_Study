@@ -17,15 +17,18 @@ public class BOJ_1051 {
         }
 
         // 꼭짓점에 쓰여 있는 수가 모두 같은 가장 큰 정사각형 찾기
-        int answer = 0;
-        int minSize = Math.min(N,M);
-        for (int i=1;i<=minSize;i++){
+        int maxSize = 1;
+        int a = 2;
+        int b = Math.min(N,M);
+        for (int i=a;i<=b;i++){
             for(int j=0;j<M-i;j++){
                 for(int k=0;k<N-i;k++){
-                    if(arr[j][k]==arr[j][k+1]){
-                        if(arr[j][k+1]==arr[j+1][k]){
-                            if(arr[j+1][k]==arr[j+1][k+1]){
-                                answer=i;
+                    if(arr[j][k]==arr[j][k+i]){
+                        if(arr[j][k]==arr[j+i][k]){
+                            if(arr[j][k]==arr[j+i][k+i]){
+//                                maxSize = arr[j][k];
+                                if(maxSize<i)
+                                   maxSize = i;
                             }
                         }
 
@@ -33,9 +36,7 @@ public class BOJ_1051 {
                 }
             }
         }
-
-        answer = answer*answer;
         // 출력
-        System.out.println(answer);
+        System.out.println(maxSize*maxSize);
     }
 }
