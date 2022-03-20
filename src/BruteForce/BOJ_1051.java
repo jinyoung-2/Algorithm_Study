@@ -25,7 +25,7 @@ public class BOJ_1051 {
         for (int i = 0; i < N; i++) {
             String input = br.readLine();
             for (int j = 0; j < M; j++) {
-                arr[i][j] = input.charAt(i) - '0';    //문자를 숫자로 변환하는 방법 알아두기!
+                arr[i][j] = input.charAt(j) - '0';    //문자를 숫자로 변환하는 방법 알아두기!
             }
         }
 
