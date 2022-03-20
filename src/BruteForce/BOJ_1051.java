@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 // 백준 실버3 "숫자 정사각형"
 // https://www.acmicpc.net/problem/1051
+
 public class BOJ_1051 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
