@@ -13,6 +13,11 @@ public class BOJ_1977 {
         // 완전 제곱수 찾기
         int sqrtFirstNum = (int) Math.ceil(Math.sqrt(M));
         int sqrtSecondNum = (int) Math.floor(Math.sqrt(N));
+
+//        // 주의사항) 반례: 1
+//        int sqrtFirstNum = (int) Math.sqrt(M) + 1;
+//        int sqrtSecondNum = (int) Math.sqrt(N);
+
         if (sqrtFirstNum > sqrtSecondNum) {
             System.out.println(-1);
             return;
