@@ -19,33 +19,18 @@ public class BOJ_4153 {
             int y = Integer.parseInt(st.nextToken());
             int z = Integer.parseInt(st.nextToken());
 
-            // Point) 어떤 변의 길이가 최댓값인지 찾기
-            int max = Math.max(x,Math.max(y,z));
-            if(max==x){
-                if(Math.pow(x,2)==Math.pow(y,2)+Math.pow(z,2)){
-                    sb.append("right\n");
-                }
-                else{
-                    sb.append("wrong\n");
-                }
+            if(Math.pow(x,2)==Math.pow(y,2)+Math.pow(z,2)){
+                sb.append("right\n");
             }
-            else if(max==y){
-                if(Math.pow(y,2)==Math.pow(x,2)+Math.pow(z,2)){
-                    sb.append("right\n");
-                }
-                else{
-                    sb.append("wrong\n");
-                }
+            else if(Math.pow(y,2)==Math.pow(x,2)+Math.pow(z,2)){
+                sb.append("right\n");
             }
-            else if(max==z){
-                if(Math.pow(z,2)==Math.pow(x,2)+Math.pow(y,2)){
-                    sb.append("right\n");
-                }
-                else{
-                    sb.append("wrong\n");
-                }
+            else if(Math.pow(z,2)==Math.pow(x,2)+Math.pow(y,2)){
+                sb.append("right\n");
             }
-
+            else{
+                sb.append("wrong\n");
+            }
         }
         System.out.print(sb);
     }
